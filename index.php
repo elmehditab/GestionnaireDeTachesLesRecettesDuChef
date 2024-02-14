@@ -28,14 +28,10 @@
       </div>
     </main>
     <?php
-    $sqli = new mysqli('localhost', 'root', '', 'nouvelletache');
-
-    if ($sqli->connect_error) {
-      die('Erreur : ' . $sqli->connect_error);
-    }
-    $result = $sqli->query("SELECT * FROM nouvelletache");
+    include 'includes/dbconnexion.inc.php';
+   $stmt = $pdo->query("SELECT * FROM nouvelletache");
     echo '<aside class="tache--container">';
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       echo '<div  class="tache" id="tache">
       <div>
       <img class="tache-image" src="images/' . $row["image_url"] . '" alt="Description" />
