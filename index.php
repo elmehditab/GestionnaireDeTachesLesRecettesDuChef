@@ -15,16 +15,16 @@
   <div class="grid-layout">
     <main class="categorie--container">
       <div class="categorie categorie-1">
-        <a href="index.php?cat=entree">entrées</a>
+        <a href="index.php?cat=Entrées">entrées</a>
       </div>
       <div class="categorie categorie-2">
-        <a href="index.php?cat=plat">plats</a>
+        <a href="index.php?cat=Plats">plats</a>
       </div>
       <div class="categorie categorie-3">
-        <a href="index.php?cat=dessert">desserts</a>
+        <a href="index.php?cat=Desserts">desserts</a>
       </div>
       <div class="categorie categorie-4">
-        <a href="index.php?cat=boisson">boissons</a>
+        <a href="index.php?cat=Boissons">boissons</a>
       </div>
     </main>
     <?php

@@ -54,5 +54,29 @@ window.addEventListener("load", function () {
       event.preventDefault();
       modifierTache();
   });
+
   document.querySelector(".fleche-retour").addEventListener("click", fermerPopup);
+  
+  document.querySelectorAll('.categorie a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const cat = this.getAttribute('href').split('=')[1];
+      filtreTache(cat);
+    });
   });
+  
+  function filtreTache(categorie) {
+    $.ajax({
+      url: 'includes/filtreTache.php',
+      type: 'GET',
+      data: {cat: categorie},
+      success: function(response) {
+        document.querySelector('.tache--container').innerHTML = response;
+      },
+      error: function() {
+        alert('Erreur lors du filtrage des tâches');
+      }
+    });
+  }
+  });
+
