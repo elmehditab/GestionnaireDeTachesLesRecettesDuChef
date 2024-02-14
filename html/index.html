@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet de Session</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>les recettes du chef.</h1>
+    </header>
+    <div class="grid-layout">
+      <!--------------------Liste des catégories (tache)------------------->
+      <main class="categorie--container">
+        <div class="categorie categorie-1">
+          <a href="index.html?cat=entree">entrées</a>
+        </div>
+
+        <div class="categorie categorie-2">
+          <a href="index.html?cat=plat">plats</a>
+        </div>
+
+        <div class="categorie categorie-3">
+          <a href="index.html?cat=dessert">desserts</a>
+        </div>
+
+        <div class="categorie categorie-4">
+          <a href="index.html?cat=cocktails">cocktails</a>
+        </div>
+      </main>
+
+      <!------------------fin de la liste des catégories--------->
+      <aside class="tache--container">
+        <!----------------------Debut de la recette (tache)--------------------->
+        <div class="tache" id="tache1">
+          <div>
+            <img
+              class="tache-image"
+              src="images/poulet.webp"
+              alt="Poulet aux olives et aux noix de cajou."
+            />
+          </div>
+
+          <div class="tache-texte">
+            <h2>PLATS</h2>
+            <p>Poulet aux olives et aux noix de cajou.</p>
+            <p class="modifier">
+              <img class="open-modal" src="images/bouton-modifie.png" alt="" />
+            </p>
+          </div>
+        </div>
+        <!-------------------Fin de la recette (tache)------------------->
+
+        <div class="tache" id="tache2">
+          <div>
+            <img
+              class="tache-image"
+              src="images/poulet.webp"
+              alt="Poulet aux olives et aux noix de cajou."
+            />
+          </div>
+          <div class="tache-texte">
+            <h2>PLATS</h2>
+            <p>Poulet aux olives et aux noix de cajou.</p>
+            <p class="modifier">
+              <img class="open-modal" src="images/bouton-modifie.png" alt="" />
+            </p>
+          </div>
+        </div>
+        <div class="tache" id="tache3">
+          <div>
+            <img
+              class="tache-image"
+              src="images/poulet.webp"
+              alt="Poulet aux olives et aux noix de cajou."
+            />
+          </div>
+          <div class="tache-texte">
+            <h2>PLATS</h2>
+            <p>Poulet aux olives et aux noix de cajou.</p>
+            <p class="modifier">
+              <img class="open-modal" src="images/bouton-modifie.png" alt="" />
+            </p>
+          </div>
+        </div>
+        <div class="tache" id="tache4">
+          <div>
+            <img
+              class="tache-image"
+              src="images/poulet.webp"
+              alt="Poulet aux olives et aux noix de cajou."
+            />
+          </div>
+          <div class="tache-texte">
+            <h2>PLATS</h2>
+            <p>Poulet aux olives et aux noix de cajou.</p>
+            <p class="modifier">
+              <img class="open-modal" src="images/bouton-modifie.png" alt="" />
+            </p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!----------------------Debut du POP UP---------------------->
+    <div class="popupContainer" id="popup1">
+      <div class="popupTitre">
+        <h2>Modifier la recette</h2>
+      </div>
+      <div class="popupFermer">
+        <a href=""></a>
+      </div>
+      <form>
+        <br />
+        <div class="popupCate">
+          <label for="categorie">Catégorie:</label>
+          <select name="categorie" id="categorie-selection">
+            <option value="categorie">Veuillez choisir une catégorie</option>
+            <option value="Entrées">Entrées</option>
+            <option value="Plats">Plats</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Boissons">Boissons</option>
+          </select>
+        </div>
+        <br />
+        <div class="popupDesc">
+          <label for="description">Description du plat : </label>
+          <textarea
+            name="description"
+            id="description"
+            cols="20"
+            rows="2"
+          ></textarea>
+        </div>
+        <br />
+        <div class="popupImage">
+          <label for="image">Nouvelle image :</label>
+          <input type="file" id="image" accept="image/*" />
+        </div>
+        <br />
+
+        <div class="popupBtn">
+          <button>MODIFIER</button>
+        </div>
+        <div class="fleche-retour">
+          <a href="index.html"><img src="images/fleche-gauche.png" /></a>
+        </div>
+      </form>
+    </div>
+    <!----------------------Fin du POP UP---------------------->
+
+    <div class="overlay"></div>
+
+    <footer>
+      <a href="ajout.html">ajouter une recette</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajouter une recette</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>les recettes du chef.</h1>
+    </header>
+    <div class="fleche-retour">
+      <a href="index.html"><img src="images/fleche-gauche.png" /></a>
+    </div>
+    <div class="formulaire-ajout">
+      <div class="Titre2"><h2>ajouter une recette</h2></div>
+      <form action="process_ajout.php" method="post">
+        <br />
+        <div class="cl-cate">
+          <label for="categorie">Catégorie:</label>
+          <select name="categorie" id="categorie-selection">
+            <option value="categorie">Veuillez choisir une catégorie</option>
+            <option value="Entrées">Entrées</option>
+            <option value="Plats">Plats</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Boissons">Boissons</option>
+          </select>
+        </div>
+        <br />
+        <div class="cl-desc">
+          <label for="description">Description du plat : </label>
+          <textarea
+            name="description"
+            id="description"
+            cols="20"
+            rows="2"
+          ></textarea>
+        </div>
+        <br />
+        <div class="cl-image">
+          <label for="image">Nouvelle image :</label>
+          <input type="file" id="image" accept="image/*" />
+        </div>
+        <br />
+        <div class="Bouton-envoyer">
+          <button>SOUMETTRE</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

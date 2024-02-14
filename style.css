@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-image: url(images/imagedefond.jpg);
+  background-position: center;
+  background-size: cover;
+}
+header {
+  padding: 10px;
+  text-align: center;
+  background-color: #455b36;
+  color: white;
+  font-size: 1.5rem;
+}
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  margin: 6rem;
+}
+.categorie--container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+  width: 20rem;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+.categorie > a {
+  color: black;
+  text-decoration: none;
+  font-size: 3rem;
+}
+.categorie > a:hover {
+  color: #455b36;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+}
+.tache--container {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: auto;
+  grid-gap: 3rem;
+  column-gap: 4rem;
+}
+.tache {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  transition: all 0.3s ease-in-out;
+  background-color: #455b36;
+  margin-right: 2rem;
+  border-radius: 0.5rem;
+}
+.tache:hover {
+  transform: scale(1.05);
+  background-color: #707c4f;
+}
+.tache-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+.tache-texte > h2 {
+  color: white;
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+.tache-texte > p {
+  color: white;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+.modifier {
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  text-align: right;
+}
+.modifier img {
+  float: right;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  margin-left: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+.modifier img:hover {
+  transform: scale(1.2);
+}
+footer {
+  width: auto;
+  font-size: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 1.5rem;
+}
+footer > a {
+  color: #455b36;
+  text-underline-offset: 1rem;
+}
+footer > a:hover {
+  color: black;
+}
+
+.formulaire-ajout {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 100px;
+  padding: 10px;
+  background-color: #455b36;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.cl-cate {
+  display: flex;
+  color: white;
+  margin-left: 5%;
+  margin-top: 15px;
+}
+
+.cl-cate > select {
+  width: 45%;
+  border: 1px solid white;
+  margin-left: 270px;
+  border-radius: 0.4rem;
+  font-size: 15px;
+  justify-content: center;
+}
+
+.cl-desc {
+  display: flex;
+  color: white;
+  margin-left: 5%;
+  margin-top: 15px;
+}
+
+.cl-desc > textarea {
+  display: grid;
+  width: 600px;
+  height: 100px;
+  margin-left: 150px;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  justify-content: center;
+}
+
+.cl-image {
+  display: flex;
+  color: white;
+  margin-left: 5%;
+  margin-top: 15px;
+}
+
+.cl-image #image {
+  border: 2px solid white;
+  padding: 10px 10px 10px;
+  border-radius: 10px;
+  margin-left: 200px;
+  justify-content: center;
+}
+
+.Titre2 {
+  text-align: center;
+  background-color: white;
+  color: #455b36;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.Bouton-envoyer {
+  margin: 10px;
+  background-color: #455b36;
+  color: #455b36;
+  text-align: right;
+}
+
+.Bouton-envoyer > button {
+  background-color: white;
+  color: #455b36;
+  text-align: right;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: medium;
+  color: #455b36;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.Bouton-envoyer > button:hover {
+  background-color: white;
+  color: #455b36;
+  text-align: right;
+  padding: 10px;
+  transform: scale(1.05);
+}
+
+.cl-connexion {
+  height: 400px;
+  width: 600px;
+  margin-top: 100px;
+  margin-left: 500px;
+  padding: 10px;
+  background-color: transparent;
+  border: 1px solid #455b36;
+  border-radius: 0.5rem;
+}
+
+.Titre-connexion {
+  text-align: center;
+  padding: 30px;
+}
+
+.interieur-formulaire input {
+  border: none;
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-left: 100px;
+  margin-top: 10px;
+  width: 300px;
+  height: 40px;
+}
+
+.texte-pasinscrit {
+  margin-top: 30px;
+  margin-left: 120px;
+}
+
+.texte-pasinscrit a {
+  margin-left: 75px;
+}
+
+.texte-pasinscrit a:hover {
+  color: #455b36;
+  margin-left: 75px;
+}
+
+.Bouton-Connexion .buttonn {
+  background-color: #455b36;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 5rem;
+}
+
+.Bouton-Connexion .buttonn:hover {
+  transform: scale(1.05);
+  transition: all 0.05s ease-in-out;
+}
+
+.popupContainer {
+  background-color: #455b36;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 20px;
+  color: white;
+}
+
+.popupTitre h2 {
+  font-size: 24px;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  color: #455b36;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popupContainer input,
+textarea,
+select {
+  width: 300px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+.popupContainer select {
+  margin-left: 105px;
+}
+.popupContainer textarea {
+  border: #455b36;
+  padding: 10px 10px 10px;
+  border-radius: 10px;
+  margin-left: 25px;
+}
+
+.popupContainer {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  width: 900px;
+}
+
+.popupContainer form button {
+  display: flex;
+  background-color: white;
+  color: #455b36;
+  font-size: large;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.05s ease-in-out;
+}
+.popupContainer form button:hover {
+  background-color: white;
+  font-size: large;
+  color: #455b36;
+  text-align: right;
+  padding: 10px;
+  transform: scale(1.05);
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  backdrop-filter: blur(5px);
+}
+
+.popupImage #image {
+  border: 2px solid white;
+  padding: 10px 10px 10px;
+  border-radius: 10px;
+  margin-left: 48px;
+}
