@@ -32,7 +32,7 @@
    $stmt = $pdo->query("SELECT * FROM nouvelletache");
     echo '<aside class="tache--container">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      echo '<div  class="tache" id="tache">
+      echo '<div  class="tache" id="tache ">
       <div>
       <img class="tache-image" src="images/' . $row["image_url"] . '" alt="Description" />
       </div>
