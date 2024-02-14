@@ -29,15 +29,15 @@ window.addEventListener("load", function () {
     function modifierTache() {
       let description = $('#popup1 #description').val();
       let categorie = $('.popupContainer #categorie-selection').val();
-      let idTache = tache.data('id');
+      let idTache = tache.getAttribute('data-id');
       let formData = new FormData();
       formData.append('description',description);
       formData.append('categorie',categorie);
       formData.append('id',idTache);
-      formData.append('image',$('image')[0].files[0]);
+      formData.append('image', $('#image')[0].files[0]);
 
       $.ajax({
-        url: 'includes/processModification.php',
+        url: 'includes/processModification.inc.php',
         type: 'POST',
         data: formData,
         contentType: false,
