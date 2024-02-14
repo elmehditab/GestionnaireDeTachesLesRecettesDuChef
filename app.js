@@ -67,7 +67,7 @@ window.addEventListener("load", function () {
   
   function filtreTache(categorie) {
     $.ajax({
-      url: 'includes/filtreTache.php',
+      url: 'includes/filtreTache.inc.php',
       type: 'GET',
       data: {cat: categorie},
       success: function(response) {
