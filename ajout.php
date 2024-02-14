@@ -16,7 +16,7 @@
     </div>
     <div class="formulaire-ajout">
       <div class="Titre2"><h2>ajouter une recette</h2></div>
-      <form action="includes/processDynamique.inc.php" method="post" enctype="multipart/form-data">
+      <form action="includes/processAjout.inc.php" method="post" enctype="multipart/form-data">
         <br />
         <div class="cl-cate">
           <label for="categorie">Catégorie:</label>
