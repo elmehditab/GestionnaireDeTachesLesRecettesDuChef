@@ -27,7 +27,7 @@ window.addEventListener("load", function () {
     });
   
 function modifierTache(event) {
-  event.preventDefault();
+
 
   if (tache) {
     
@@ -57,6 +57,7 @@ function modifierTache(event) {
           }
       });
   }
+  fermerPopup();
 }
     document.querySelector(".popupBtn button").addEventListener("click", modifierTache);
     document.querySelector(".fleche-retour").addEventListener("click", fermerPopup);

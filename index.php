@@ -32,7 +32,7 @@
    $stmt = $pdo->query("SELECT * FROM nouvelletache ORDER BY `nouvelletache`.`description` ASC");
     echo '<aside class="tache--container">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-      echo '<div class="tache" id="tache-' . $row["id"] . '" data-id="' . $row["id"] . '">
+      echo '<div class="tache" id="'. '" data-id="' . $row["id"] . '">
       <div>
       <img class="tache-image" src="images/' . $row["image_url"] . '" alt="Description" />
       </div>
@@ -99,6 +99,5 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="module" src="app.js"></script>
-    
 </body>
 </html>

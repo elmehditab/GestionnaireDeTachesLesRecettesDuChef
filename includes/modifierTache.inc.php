@@ -7,22 +7,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $description = $_POST["description"];
     $fileName = null;
 
-    $fileName = $_FILES["image"]["name"];
-    $fileTmpName = $_FILES["image"]["tmp_name"];
-    
-    $allowedExt = array("jpg", "jpeg", "png","webp");
-    $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
+    if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+        $fileName = $_FILES["image"]["name"];
+        $fileTmpName = $_FILES["image"]["tmp_name"];
+        
+        $allowedExt = array("jpg", "jpeg", "png", "webp");
+        $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
-    if (!in_array($fileExt, $allowedExt)) {
-        die("Erreur : seuls les fichiers JPG, JPEG, PNG et WEBP sont autorisés.");
+        if (!in_array($fileExt, $allowedExt)) {
+            die("seuls les fichiers JPG, JPEG, PNG et WEBP sont autorisés.");
+        }
+        
+        $fileDestination = "../images/" . $fileName;
+
+        if (!move_uploaded_file($fileTmpName, $fileDestination)) {
+            die("Erreur");
+        }
     }
-    
-    $fileDestination = "../images/" . $fileName;
 
-
-    if (move_uploaded_file($fileTmpName, $fileDestination)) {
-        try {
-            require_once "dbconnexion.inc.php";
+    try {
+        require_once "dbconnexion.inc.php";
         
         if ($fileName !== null) {
             $query = "UPDATE nouvelletache SET categorie = :categorie, description = :description, image_url = :image_url WHERE id = :id";
@@ -38,12 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bindParam(":id", $id);
         $stmt->execute();
 
+
         die();
-        } catch (PDOException $e) {
-            die("Query Failed: " . $e->getMessage());
-        }
-    } else {
-        die("Erreur lors du téléchargement du fichier.");
+
+    } catch (PDOException $e) {
+        die("Query Failed: " . $e->getMessage());
     }
 } else {
     header("Location: ../index.php");

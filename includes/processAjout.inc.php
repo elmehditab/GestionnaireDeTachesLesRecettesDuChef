@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Query Failed: " . $e->getMessage());
         }
     } else {
-        die("Erreur lors du téléchargement du fichier.");
+        die("Erreur");
     }
 } else {
     header("Location: ../index.php");
