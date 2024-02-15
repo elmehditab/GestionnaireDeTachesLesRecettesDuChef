@@ -15,13 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
         if (!in_array($fileExt, $allowedExt)) {
-            die("seuls les fichiers JPG, JPEG, PNG et WEBP sont autorisés.");
+            die("Erreur : seuls les fichiers JPG, JPEG, PNG et WEBP sont autorisés.");
         }
         
         $fileDestination = "../images/" . $fileName;
 
         if (!move_uploaded_file($fileTmpName, $fileDestination)) {
-            die("Erreur");
+            die("Erreur lors du téléchargement du fichier.");
         }
     }
 
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bindParam(":description", $description);
         $stmt->bindParam(":id", $id);
         $stmt->execute();
-
 
         die();
 
