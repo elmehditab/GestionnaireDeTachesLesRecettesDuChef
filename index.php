@@ -29,7 +29,7 @@
     </main>
     <?php
     include 'includes/dbconnexion.inc.php';
-   $stmt = $pdo->query("SELECT * FROM nouvelletache");
+   $stmt = $pdo->query("SELECT * FROM nouvelletache ORDER BY `nouvelletache`.`description` ASC");
     echo '<aside class="tache--container">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
       echo '<div class="tache" id="tache-' . $row["id"] . '" data-id="' . $row["id"] . '">
@@ -99,5 +99,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script type="module" src="app.js"></script>
+    
 </body>
 </html>
