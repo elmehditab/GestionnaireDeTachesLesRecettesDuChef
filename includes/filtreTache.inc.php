@@ -14,9 +14,7 @@ if ($category !== 'all') {
 }
 
 $stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($result as $row) {
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo '<div class="tache" id="tache-' . $row["id"] . '" data-id="' . $row["id"] . '">
         <div>
         <img class="tache-image" src="images/' . $row["image_url"] . '" alt="Description" />
