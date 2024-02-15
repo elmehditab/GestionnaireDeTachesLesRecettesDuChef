@@ -26,22 +26,38 @@ window.addEventListener("load", function () {
       button.addEventListener("click", ouvrirPopup);
     });
   
-    function modifierTache(event) {
-      event.preventDefault();
+function modifierTache(event) {
+  event.preventDefault();
+
+  if (tache) {
+    
+      let nouvelleDesc = document.querySelector('#popup1 #description').value;
+      let categorie = document.querySelector('.popupContainer #categorie-selection').value;
+      let newImage = document.getElementById('image').files[0];
+      let tacheId = tache.getAttribute("data-id"); 
+
   
-      if (tache) {
-        let nouvelleDesk = document.querySelector('#popup1 #description').value
-        let categorie = document.querySelector('.popupContainer #categorie-selection').value;
-  
-        tache.querySelector(".tache h2").textContent = categorie;
-        const image = tache.querySelector(".tache-image");
-        let newImage = document.getElementById('image');
-        if (newImage.files[0]) image.src = URL.createObjectURL(newImage.files[0]);
-        tache.querySelector(".tache-texte p").innerText = nouvelleDesk;
-        fermerPopup();
-      }
-    }
-  
+      let formData = new FormData();
+      formData.append('description', nouvelleDesc);
+      formData.append('categorie', categorie);
+      if (newImage) formData.append('image', newImage);
+      formData.append('id', tacheId);
+
+      $.ajax({
+          type: "POST",
+          url: "includes/modifierTache.inc.php",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+              document.querySelector('.tache--container').innerHTML = response;
+          },
+          error: function() {
+              alert('Erreur lors de la modification de la tâche');
+          }
+      });
+  }
+}
     document.querySelector(".popupBtn button").addEventListener("click", modifierTache);
     document.querySelector(".fleche-retour").addEventListener("click", fermerPopup);
   
