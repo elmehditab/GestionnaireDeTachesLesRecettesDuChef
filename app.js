@@ -26,36 +26,24 @@ window.addEventListener("load", function () {
       button.addEventListener("click", ouvrirPopup);
     });
   
-    function modifierTache() {
-      let description = $('#popup1 #description').val();
-      let categorie = $('.popupContainer #categorie-selection').val();
-      let idTache = tache.getAttribute('data-id');
-      let formData = new FormData();
-      formData.append('description',description);
-      formData.append('categorie',categorie);
-      formData.append('id',idTache);
-      formData.append('image', $('#image')[0].files[0]);
-
-      $.ajax({
-        url: 'includes/processModification.inc.php',
-        type: 'POST',
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(reponse){
-          $("#tache-" + idTache).replaceWith(reponse);
-          fermerPopup();
-        },error:function(){
-          alert('erreur lors de la modification');
-        }
-      });
-    }
-    document.querySelector(".popupBtn button").addEventListener("click", function(event) {
+    function modifierTache(event) {
       event.preventDefault();
-      modifierTache();
-  });
-
-  document.querySelector(".fleche-retour").addEventListener("click", fermerPopup);
+  
+      if (tache) {
+        let nouvelleDesk = document.querySelector('#popup1 #description').value
+        let categorie = document.querySelector('.popupContainer #categorie-selection').value;
+  
+        tache.querySelector(".tache h2").textContent = categorie;
+        const image = tache.querySelector(".tache-image");
+        let newImage = document.getElementById('image');
+        if (newImage.files[0]) image.src = URL.createObjectURL(newImage.files[0]);
+        tache.querySelector(".tache-texte p").innerText = nouvelleDesk;
+        fermerPopup();
+      }
+    }
+  
+    document.querySelector(".popupBtn button").addEventListener("click", modifierTache);
+    document.querySelector(".fleche-retour").addEventListener("click", fermerPopup);
   
   document.querySelectorAll('.categorie a').forEach(function(link) {
     link.addEventListener('click', function(event) {
@@ -80,3 +68,4 @@ window.addEventListener("load", function () {
   }
   });
 
+ 
