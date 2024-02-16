@@ -59,7 +59,7 @@ function modifierTache(event) {
   }
 }
     document.querySelector(".popupBtn button").addEventListener("click", modifierTache);
-    document.querySelector(".fleche-retour yy").addEventListener("click", fermerPopup);
+    document.querySelector(".fleche-retour").addEventListener("click", fermerPopup);
   
   document.querySelectorAll('.categorie a').forEach(function(link) {
     link.addEventListener('click', function(event) {
