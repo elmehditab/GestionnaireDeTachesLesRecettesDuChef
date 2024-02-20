@@ -2,11 +2,11 @@
 
 ## Fonctionnalités Implémentées
 
-### Page HTML Principale (index.html)
+### Page Principale 
 
 La page principale contient une liste de tâches ainsi que des catégories sous forme de liens. Chaque catégorie, lorsqu'elle est cliquée, filtre les tâches affichées en fonction de celle sélectionnée. Cette page propose également un accès direct à la page d'ajout de tâches.
 
-### Page d’Ajout de Tâche (ajout.html)
+### Page d’Ajout de Tâche 
 
 La page d'ajout de tâche offre un formulaire permettant aux utilisateurs de créer de nouvelles tâches. Les champs disponibles comprennent le nom de la tâche, sa catégorie et l'utilisateur affecté.
 
