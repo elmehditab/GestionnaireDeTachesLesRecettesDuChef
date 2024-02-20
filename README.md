@@ -1,4 +1,4 @@
-﻿# GestionnaireDeTachesLesRecettesDuChef
+﻿# Gestionnaire de taches : Les recettes du chef
 
 ## Fonctionnalités Implémentées
 
