@@ -19,6 +19,7 @@ La modification des tâches est rendue possible grâce à JavaScript. Chaque tâ
 Lors de la création d'une nouvelle tâche, les données du formulaire sont envoyées au serveur via une requête POST. PHP est alors utilisé pour récupérer ces données et les ajouter à la base de données correspondante.
 
 ### Affichage Dynamique des Tâches
+[https://github.com/elmehditab/GestionnaireDeTachesLesRecettesDuChef/edit/main/README.md]
 
 Les tâches sont désormais affichées dynamiquement à partir des données stockées dans la base de données. Ainsi, il n'est plus nécessaire de coder manuellement chaque tâche dans le code HTML.
 
